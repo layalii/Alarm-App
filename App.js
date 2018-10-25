@@ -1,11 +1,13 @@
 import React from "react";
-import AlarmSet from "./AlarmSet";
+import { View, StyleSheet } from "react-native";
+// import AlarmSet from "./AlarmSet";
+import NewAlarm from "./NewAlarm";
 
 export default class App extends React.Component {
   render() {
     return (
       <View style={styles.container}>
-        <AlarmSet />
+        <NewAlarm />
       </View>
     );
   }
@@ -15,7 +17,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center"
+    paddingTop: 20
   }
 });
