@@ -8,7 +8,7 @@ export default class NewAlarm extends Component {
       <React.Fragment>
         <View style={styles.container}>
           <Text
-            style={{ fontSize: 32, marginBottom: 30, color: "rgba(0,0,0,.4)" }}
+            style={{ fontSize: 20, marginBottom: 30, color: "rgba(0,0,0,.4)" }}
           >
             New Alarm
           </Text>
