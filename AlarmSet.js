@@ -1,19 +1,41 @@
 import React, { Component } from "react";
-import { View, Text, StyleSheet, Switch } from "react-native";
+import { View, Text, StyleSheet, Switch, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 
 export default class AlarmSet extends Component {
+  state = {
+    alarms: [
+      {
+        hour: "05",
+        minute: "00",
+        day: "monday"
+      },
+      {
+        hour: "10",
+        minute: "30",
+        day: "tuesday"
+      },
+      {
+        hour: "22",
+        minute: "34",
+        day: "wednesday"
+      }
+    ]
+  };
   render() {
     return (
       <React.Fragment>
         <View style={styles.wrapper}>
-          <Item />
-          <Item />
-          <Item />
+          {alarms.map(alm => {
+            return <Item />;
+          })}
         </View>
-        <View style={styles.buttomIcon}>
+        <TouchableOpacity
+          style={styles.buttomIcon}
+          onPress={() => this.props.navigation.navigate("NewAlarm")}
+        >
           <MaterialIcons name="add-circle-outline" color="gray" size={60} />
-        </View>
+        </TouchableOpacity>
       </React.Fragment>
     );
   }

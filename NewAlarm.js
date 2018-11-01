@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { View, Text, StyleSheet, TouchableOpacity, Slider } from "react-native";
+import ButtomButtons from "./ButtomButtons";
 
 export default class NewAlarm extends Component {
   render() {
@@ -70,14 +71,11 @@ export default class NewAlarm extends Component {
             <Item title="S" />
           </View>
           <View />
-          <View style={styles.buttonscConatiner}>
-            <TouchableOpacity onPress={null}>
-              <Text style={{ color: "gray", fontSize: 18 }}>Cancel</Text>
-            </TouchableOpacity>
-            <TouchableOpacity onPress={null}>
-              <Text style={{ color: "gray", fontSize: 18 }}>Save</Text>
-            </TouchableOpacity>
-          </View>
+          <ButtomButtons
+            btn1="Cancel"
+            btn2="Save"
+            navigation={this.props.navigation}
+          />
         </View>
       </React.Fragment>
     );
@@ -118,12 +116,6 @@ const styles = StyleSheet.create({
     borderRadius: 100,
     padding: 2,
     margin: 10
-  },
-  buttonscConatiner: {
-    paddingVertical: 20,
-    width: "100%",
-    flexDirection: "row",
-    justifyContent: "space-around"
   },
   hourWrapper: {
     width: "80%",
